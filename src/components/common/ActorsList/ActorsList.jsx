@@ -34,17 +34,22 @@ export const ActorsList = ({ searchQuery }) => {
         )}
       </h1>
       <ItemsList>
-        {status === "loading"
-          ? [...Array(10)].map((_, id) => <CardLoader key={id} />)
-          : actors.map(({ id, name, profile_path }) => (
-              <ItemCard
-                key={id}
-                id={id}
-                title={name}
-                poster_path={profile_path}
-                mode="actor"
-              />
-            ))}
+        {status === "loading" ? (
+          [...Array(10)].map((_, id) => <CardLoader key={id} />)
+        ) : actors?.length > 0 ? (
+          actors.map(({ id, name, profile_path }) => (
+            <ItemCard
+              key={id}
+              id={id}
+              title={name}
+              poster_path={profile_path}
+              mode="actor"
+            />
+          ))
+        ) : (
+          <h1>Ничего нет</h1>
+        )}
+        }
       </ItemsList>
       <Pagination {...pagination} mode="actors" />
     </div>
