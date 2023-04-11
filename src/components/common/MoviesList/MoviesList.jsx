@@ -59,12 +59,15 @@ export const MoviesList = ({ searchQuery }) => {
         {!searchQuery && <SortBy />}
       </div>
       <ItemsList>
-        {status === "loading"
-          ? [...Array(10)].map((_, id) => <CardLoader key={id} />)
-          : movies.map((m) => <ItemCard key={m.id} {...m} />)}
+        {status === "loading" ? (
+          [...Array(10)].map((_, id) => <CardLoader key={id} />)
+        ) : movies?.length > 0 ? (
+          movies.map((m) => <ItemCard key={m.id} {...m} />)
+        ) : (
+          <h1>Ничего нет</h1>
+        )}
       </ItemsList>
       <Pagination {...pagination} />
     </>
   );
 };
-
