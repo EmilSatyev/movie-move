@@ -15,12 +15,12 @@ export const navigationRoutes = [
   { path: "actor/:actorId", component: ActorPage },
   {
     path: "search_movie/:searchQuery",
-    title: "Поиск фильма",
+    title: "searchMovies",
     component: MovieSearch,
   },
   {
     path: "search_actor/:searchQuery",
-    title: "Поиск актера",
+    title: "searchActors",
     component: ActorSearch,
   },
   { path: "*", title: "404", component: NotFound },

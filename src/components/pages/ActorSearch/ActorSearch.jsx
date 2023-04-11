@@ -6,15 +6,15 @@ import { ActorsList, ErrorBoundary } from "../../common";
 import { LangContext } from "../../common/App/App";
 import {ErrorFallback} from "../../common/ErrorBoundary/ErrorFallback";
 
-export const ActorSearch = ({ title }) => {
+export const ActorSearch = () => {
   const { searchQuery } = useParams();
   const { lang } = useContext(LangContext);
-  const { loadingWord } = LANGUAGES[lang];
+  const { loadingWord, searchActors } = LANGUAGES[lang];
 
   return (
     <>
       <Helmet>
-        <title>{`${APP_NAME}: ${title ? title : loadingWord}`}</title>
+        <title>{`${APP_NAME}: ${searchActors ? searchActors : loadingWord}`}</title>
       </Helmet>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <ActorsList searchQuery={searchQuery} />
