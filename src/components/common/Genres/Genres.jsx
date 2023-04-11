@@ -32,7 +32,7 @@ export const Genres = () => {
 
   const onChange = (e) => {
     const genreId = +e.target.name;
-    navigate("/movie-move/");
+    navigate("");
     dispatch(setSelectedGenres(genreId));
     dispatch(setMoviesPage(1));
   };
