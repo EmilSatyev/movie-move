@@ -1,0 +1,11 @@
+.root {
+  grid-area: aside;
+  padding: 70px 15px 70px var(--offset);
+
+  @media (max-width: 840px) {
+    padding: 0 var(--offset) 30px;
+  }
+  @media (max-width: 460px) {
+    text-align: center;
+  }
+}

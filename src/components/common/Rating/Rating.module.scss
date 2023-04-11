@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: var(--yellow-color);
+  }
+
+  span {
+    color: var(--light-color);
+    font-size: 1em;
+  }
+
+  &__noRating {
+    svg {
+      fill: var(--link-color);
+    }
+
+    span {
+      color: var(--link-color);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.root {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 120px 1fr;
+  grid-template-areas:
+    "header  header"
+    "aside main";
+  min-height: 100vh;
+
+
+  &__main {
+    grid-area: main;
+    background-color: var(--input-bg);
+    border-top-left-radius: 30px;
+    padding: 61px 55px;
+
+    @media (max-width: 840px) {
+      padding: var(--offset);
+      flex-grow: 1;
+    }
+  }
+
+  @media (max-width: 840px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

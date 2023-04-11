@@ -1,0 +1,16 @@
+:root {
+  --bg-color: #0f1014;
+  --light-color: #ffffff;
+  --input-bg: #1A1820;
+  --link-color: #6A6C70;
+  --yellow-color: #f4c92b;
+  --rightside-bg-color: #222128;
+
+  --offset: 65px;
+}
+
+@media (max-width: 840px) {
+  :root {
+    --offset: 30px;
+  }
+}

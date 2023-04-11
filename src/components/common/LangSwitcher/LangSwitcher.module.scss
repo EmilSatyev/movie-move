@@ -1,0 +1,16 @@
+.root {
+  color: var(--link-color);
+  white-space: nowrap;
+  button {
+    font-size: inherit;
+
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+}
+
+.active {
+  color: var(--light-color);
+  pointer-events: none;
+}

@@ -1,0 +1,88 @@
+.root {
+  position: sticky;
+  top: 70px;
+
+  //padding: 70px 15px 70px var(--offset);
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 300px;
+    overflow: hidden;
+    transition: 0.2s;
+
+    @media (max-width: 840px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 460px) {
+      justify-content: center;
+    }
+  }
+
+  &__form {
+  }
+
+  &__item {
+    font-size: 15px;
+    position: relative;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    label {
+      color: var(--link-color);
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        color: var(--light-color);
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked + label {
+        color: var(--light-color);
+      }
+
+      &:focus + label {
+        outline: 1px solid white;
+        outline-offset: -3px;
+      }
+    }
+  }
+
+  button {
+    font-size: 12px;
+    color: var(--link-color);
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    @media (max-width: 840px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 840px) {
+    position: static;
+  }
+
+}
+
+.show {
+  max-height: 600px;
+}

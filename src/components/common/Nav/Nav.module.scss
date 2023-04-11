@@ -1,0 +1,10 @@
+.root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  ul {
+    display: flex;
+    gap: 30px;
+
+  }
+}
