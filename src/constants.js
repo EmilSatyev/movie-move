@@ -22,6 +22,8 @@ const LANGUAGES = {
     loadingWord: "Loading...",
     notSuchPage: "Not such page",
     noRate: "NR",
+    searchActors: "Search actors",
+    searchMovies: "Search movies",
   },
   ru: {
     genresWord: "Жанры",
@@ -44,6 +46,8 @@ const LANGUAGES = {
     loadingWord: "Загрузка...",
     notSuchPage: "Такой страницы нет",
     noRate: "БР",
+    searchActors: "Поиск актеров",
+    searchMovies: "Поиск фильмов",
   },
 };
 

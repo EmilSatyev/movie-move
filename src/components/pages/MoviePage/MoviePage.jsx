@@ -91,7 +91,7 @@ export const MoviePage = () => {
                   <ul className={styles.root__genres}>
                     {genres?.map(({ id, name }) => (
                       <li key={id}>
-                        <Link to="/" onClick={() => onClick(id)}>
+                        <Link to="" onClick={() => onClick(id)}>
                           {name}
                         </Link>
                       </li>

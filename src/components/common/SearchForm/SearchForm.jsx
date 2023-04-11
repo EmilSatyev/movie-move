@@ -29,7 +29,7 @@ export const SearchForm = () => {
       dispatch(setActorsPage(1));
       dispatch(clearSelectedGenres());
       navigate(
-        `/${isActorsPage ? "search_actor" : "search_movie"}/${searchText}`
+        `/movie-move/${isActorsPage ? "search_actor" : "search_movie"}/${searchText}`
       );
       setSearchText("");
     }

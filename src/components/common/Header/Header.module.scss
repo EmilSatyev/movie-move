@@ -12,6 +12,7 @@
     }
     @media (max-width: 580px) {
       column-gap: var(--offset);
+      -webkit-column-gap: var(--offset);
     }
     @media (max-width: 460px) {
       flex-direction: column;
