@@ -11,39 +11,38 @@ const cx = cnBind.bind(styles);
 const sortByData = [
   {
     id: 1,
-    name: "popularity",
+    name: "popular",
     title: "популярности",
     enTitle: "popularity",
   },
   {
     id: 2,
-    name: "vote_count",
+    name: "top_rated",
     title: "рейтингу",
-    enTitle: "vote ",
+    enTitle: "top rated",
   },
   {
     id: 3,
-    name: "release_date",
+    name: "upcoming",
     title: "дате выхода",
-    enTitle: "release date",
+    enTitle: "upcoming",
   },
 ];
 export const SortBy = () => {
   const dispatch = useDispatch();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [sortByObj, setSortByObj] = useState({
-    name: "popularity",
+    name: "popular",
     enTitle: "popularity",
     title: "популярности",
-    order: "desc",
   });
   const ref = useRef();
   const { lang } = useContext(LangContext);
   const { sortByWord } = LANGUAGES[lang];
 
   useEffect(() => {
-    const { name, order } = sortByObj;
-    dispatch(setSortBy({ name, order }));
+    const { name } = sortByObj;
+    dispatch(setSortBy(name));
   }, [sortByObj]);
 
   useEffect(() => {
@@ -65,23 +64,12 @@ export const SortBy = () => {
     dispatch(setMoviesPage(1));
   };
 
-  const toggleOrder = () => {
-    setSortByObj({
-      ...sortByObj,
-      order: sortByObj.order === "desc" ? "asc" : "desc",
-    });
-    dispatch(setMoviesPage(1));
-  };
-
   return (
     <div className={styles.root} ref={ref}>
       <div className={styles.root__top}>
         <span>{sortByWord}: </span>
         <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
           {sortByObj[lang === "en" ? "enTitle" : "title"]}
-        </button>
-        <button className={styles.root__orderBtn} onClick={toggleOrder}>
-          <SvgSelector name={sortByObj.order} />
         </button>
       </div>
       <div

@@ -20,10 +20,10 @@ export const fetchMovies = ({
     const genresFilter = filters.genre.length
       ? `&with_genres=${filters.genre.join()}`
       : "";
-    const sortByName = Object.keys(sortBy).length
-      ? `&sort_by=${sortBy.name}.${sortBy.order}`
-      : "";
-    url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}${genresFilter}${sortByName}&language=${lang}&page=${page}`;
+
+    const sortByName = sortBy ? sortBy : "";
+
+    url = `https://api.themoviedb.org/3/movie/${sortByName}?api_key=${API_KEY}${genresFilter}&language=${lang}&page=${page}`;
   }
   return function (dispatch) {
     axios(url)

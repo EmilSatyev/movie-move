@@ -3,10 +3,7 @@ const defaultState = {
   filters: {
     genre: [],
   },
-  sortBy: {
-    name: "popularity",
-    order: "desc",
-  },
+  sortBy: "popular",
   status: "loading",
   errorMessage: "",
   pagination: {
