@@ -15,7 +15,7 @@ export const fetchMovies = ({
 }) => {
   let url = "";
   if (searchQuery) {
-    url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=${lang}&page=${page}&include_adult=false&query=${searchQuery}`;
+    url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=${lang}&page=${page}&query=${searchQuery}`;
   } else {
     const genresFilter = filters.genre.length
       ? `&with_genres=${filters.genre.join()}`
