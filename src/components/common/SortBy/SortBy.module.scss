@@ -61,3 +61,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+.active {
+  background-color: #e5e5e5;
+  pointer-events: none;
+}

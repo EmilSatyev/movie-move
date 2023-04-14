@@ -77,7 +77,12 @@ export const SortBy = () => {
       >
         <ul className={styles.root__dropdownList}>
           {sortByData.map(({ id, title, name, enTitle }) => (
-            <li key={id} className={styles.root__dropdownItem}>
+            <li
+              key={id}
+              className={cx(styles.root__dropdownItem, {
+                [styles.active]: sortByObj.name === name,
+              })}
+            >
               <button onClick={() => onClickHandler({ name, title, enTitle })}>
                 {lang === "en" ? enTitle : title}
               </button>
@@ -88,4 +93,3 @@ export const SortBy = () => {
     </div>
   );
 };
-
