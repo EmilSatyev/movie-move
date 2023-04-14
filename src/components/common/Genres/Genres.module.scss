@@ -40,9 +40,10 @@
       color: var(--link-color);
       cursor: pointer;
       border-radius: 5px;
-
-      &:hover {
-        color: var(--light-color);
+      @media (hover: hover) {
+        &:hover {
+          color: var(--light-color);
+        }
       }
     }
 
@@ -80,7 +81,6 @@
   @media (max-width: 840px) {
     position: static;
   }
-
 }
 
 .show {
